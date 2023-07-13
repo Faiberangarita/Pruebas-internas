@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load  static %}
+    <meta charset="UTF-8">
+    <title>Tienda en línea</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+
+<nav>
+    <div id="izquierda">
+        <img src="{% static 'ceis.png' %}" alt="Icono" width="40" height="40">
+        <span>Centro de estudios de ingeniería de sistemas</span>
+    </div>
+    <div id="derecha">
+        <button onclick="window.location.href='/inicio/'">Inicio</button>
+        <button onclick="window.location.href='/servicios/'">Servicios</button>
+        <button onclick="window.location.href='/tienda/'">Tienda</button>
+        <button onclick="window.location.href='/carrito/'">Carrito de Compras</button>
+        <button onclick="window.location.href='/ofertas/'">Ofertas</button>
+        <button onclick="window.location.href='/somos/'">Quiénes Somos</button>
+        <button onclick="window.location.href='/contacto/'">Contacto</button>
+        <button onclick="window.location.href='/cuenta/'">Mi Cuenta</button>
+    </div>
+</nav>
+
+<body>
+    {% block contenido %}
+    <!-- Contenido específico de cada página -->
+    {% endblock %}
+
+    
+</body>
+
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,23 @@
+
+{% extends "barra.html" %}
+{% block contenido %}
+{% load static %}
+<div class="tittle">
+  <h1>Servicios</h1>
+</div>
+  
+    <div class="product-grid">
+      {%for servicio in servicios%}
+<!-- ----------------------------------------------------- -->
+      <div class="product-card">
+        <img src="{{servicio.imagen.url}}" alt="Speed Max" width="300" height="200">
+         <h2>{{servicio.titulo}}</h2>
+         <p class="description">{{servicio.contenido}}</p>
+        <p>Precio: {{servicio.precio}}</p>
+         <button class="buttonProduct" data-nombre="Speed Max" data-precio="1800">Agregar al carrito</button>
+      </div>
+      
+      {% endfor %}
+</div>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}
