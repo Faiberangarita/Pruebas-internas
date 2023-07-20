@@ -1,0 +1,24 @@
+{% extends "barra.html" %}
+{% block contenido %}
+{% load static %}
+<div class="tittle">
+  <h1>Ofertas</h1>
+</div>
+ 
+    <div class="product-grid">
+      {%for oferta in ofertas%}
+<!-- ----------------------------------------------------- -->
+      <div class="product-card">
+        <img src="{{oferta.imagen.url}}" alt="Speed Max" width="300" height="200">
+         <h2>{{oferta.titulo}}</h2>
+         <p class="description">{{oferta.contenido}}</p>
+        <button class="toggle-btn">Mostrar más...</button> 
+        <p>Precio: {{oferta.precio}}</p>
+        <p class="stock">en Stock: {{oferta.Disponibilidad}}</p>
+         
+      </div>
+      
+  {% endfor %}
+</div>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}

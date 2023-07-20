@@ -1,0 +1,40 @@
+{% extends "barra.html" %}
+{%load  static %}
+{% block contenido %}
+<div class="transition-container">
+    <div class="container">
+      <div class="panel" style="background-image: url('{% static "miembros.png" %}')">
+        <h3>Explore The World</h3>
+      </div>
+      <div class="panel" style="background-image: url('{% static "sammy.jpeg" %}')">
+        <h3>Wild Forest</h3>
+      </div>
+      <div class="panel" style="background-image: url('{% static "turing.jpg" %}')">
+        <h3>Sunny Beach</h3>
+      </div>
+      <div class="panel" style="background-image: url('{% static "antiguos.jpg" %}')">
+        <h3>City on Winter</h3>
+      </div>
+      <div class="panel" style="background-image: url('{% static "general.jpg" %}')">
+        <h3>Mountains - Clouds</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticias">
+    <div class="container1">
+        <h1>Últimas Noticias</h1>
+        <div class="card">
+          {%for noticia in noticias%}
+          
+        
+          <img src="{{noticia.imagen.url}}" alt="Speed Max" width="400" height="300">
+          <h2>{{noticia.titulo}}</h2>
+          <p class="description">{{noticia.contenido}}</p>
+    {% endfor %}
+        </div>
+        <!-- Repite los bloques de código para más noticias -->
+    </div>
+  </div>
+
+  {% endblock %}

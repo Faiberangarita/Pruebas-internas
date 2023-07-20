@@ -1,0 +1,51 @@
+{% extends "barra.html" %}
+{% block contenido %}
+{% load static %}
+    <section id="carrito">
+        <h1>Carrito de Compras</h1>
+        <div id="carrito-productos">
+            <div class="carrito-items">
+                {% if request.session.carro.items %}
+                    {% for key, value in request.session.carro.items %}
+
+                    <div class="carrito-item">
+                        
+                        <h2>{{value.nombre }}</h2>
+                        <img src="{{ value.imagen }}" alt="{{ value.nombre }}" width="300" height="200">
+                        <p>Precio: ${{ value.precio }}</p>
+                        <p>Cantidad: {{ value.cantidad }}</p>
+                        <a href="{% url 'agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'restar' value.producto_id %}" class="btn btn-sm btn-success">-</a>
+                        {{value.precio}}
+                    </div>
+                    {% endfor %}
+
+                    {% else %}
+                    <tr>
+
+                        <td colspan="3">
+                            <div class="alert alert-danger text-center">
+        
+                                Sin productos
+                            </div>
+                        </td>
+        
+        
+                    </tr>
+        
+        
+        
+                    {% endif %}
+            </div>
+        </div>
+
+        <div id="carrito-total">
+            <p>Total a pagar: {{ importe_total_carro}}</p>
+            <button onclick="realizarPago()">Realizar pago</button>
+        </div>
+        <br>
+        <button onclick="window.location.href='/tienda/'">Continuar comprando</button>
+    </div>
+    </section>
+ 
+    {% endblock %}

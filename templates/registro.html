@@ -1,0 +1,25 @@
+{% extends "barra.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+<form method="post" action="" style="color: Black;">
+
+
+    {% csrf_token %} 
+
+    <div style="width: 75%; margin: auto;">
+
+    {{form|crispy}}
+
+    <button type="submit" class="btn btn-success">Regístrate</button>
+
+</div>
+
+
+</form>
+
+{% endblock %}

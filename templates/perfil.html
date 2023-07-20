@@ -1,0 +1,40 @@
+{% extends "barra.html" %}
+{% block contenido %}
+{% load static %}
+    <div class="perfil-container">
+        <div class="perfil-info">
+            <img src="/templates/Imagenproductos/Perfil.png" alt="Foto de perfil">
+            <h2>Deivyd Dario Parra Perilla</h2>
+            <p>Email: usuario@example.com</p>
+            <p>Teléfono: 123-456-7890</p>
+            <p>Tipo de usuario: Estudiante</p>
+            <p>Tipo: Asociado</p>
+            <p>Fecha de suscripción: 07/07/2023</p>
+
+
+            <button>Editar Perfil</button>
+        </div>
+        <div class="compras-recientes">
+            <h2>Compras Recientes</h2>
+            <div class="compra-container">
+                <div class="compra">
+                    <img src="/templates/Imagenproductos/Chocorramo.png" alt="Producto 1">
+                    <div class="compra-info">
+                        <h3>Producto 1</h3>
+                        <p>Precio: $20.00</p>
+                        <p>Fecha: 2023-07-31</p>
+                    </div>
+                </div>
+                <div class="compra">
+                    <img src="/templates/Imagenproductos/ChocoBall.png" alt="Producto 2">
+                    <div class="compra-info">
+                        <h3>Producto 2</h3>
+                        <p>Precio: $15.00</p>
+                        <p>Fecha: 2023-07-30</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Agregar más compras recientes aquí -->
+        </div>
+    </div>
+    {% endblock %}
